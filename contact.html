@@ -1,83 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Rebecca Olivia Speed</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Contact Rebecca Olivia Speed for commissions and illustration enquiries." />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="sketch-home">
-
-  <header class="site-header sketch-header">
-    <nav class="navbar">
-      <a href="index.html" class="logo logo-sketch">
-        <img src="Images/logo.png" alt="Rebecca Olivia Speed Logo">
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="Rebecca Olivia Speed logo" />
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="work.html">Work</a></li>
-        <li><a href="sketchbook.html">Sketchbook</a></li>
-        <li><a href="commissions.html">Commissions</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="page-hero">
-    <div class="container">
-      <span class="accent-label">Get in Touch</span>
-      <h1>Contact ♡</h1>
-      <p>
-        For commissions, collaborations, or general enquiries,
-        feel free to get in touch.
-      </p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container contact-layout">
-      <div class="contact-box reveal">
-        <h3>Let’s Connect</h3>
-        <p>Whether you’re interested in a commission, a collaboration, or simply want to say hello, I’d love to hear from you.</p>
-        <br>
-        <p><strong>Email:</strong> hello@rebeccaoliviaspeed.com</p>
-        <p><strong>Instagram:</strong> @dizzypumpkinart</p>
-      </div>
-
-      <div class="contact-form reveal">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your name">
-
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Your email">
-
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" placeholder="What is this about?">
-
-        <label for="message">Message</label>
-        <textarea id="message" placeholder="Write your message here"></textarea>
-
-        <button class="btn btn-primary">Send Message</button>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer sketch-footer">
-    <div class="footer-inner">
-      <div class="footer-left">
-        <h3>© 2026 Rebecca Olivia Speed</h3>
-      </div>
-      <div class="footer-links">
+      <nav class="site-nav" id="navLinks">
+        <a href="index.html">Home</a>
         <a href="work.html">Work</a>
+        <a href="sketchbook.html">Sketchbook</a>
         <a href="commissions.html">Commissions</a>
         <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero section">
+      <div class="container narrow reveal">
+        <p class="eyebrow">Contact</p>
+        <h1>Get in Touch</h1>
+        <p class="page-intro">
+          For commissions, collaborations, or general enquiries, please send a message
+          with a short description of your project.
+        </p>
       </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="info-panel reveal">
+          <h2>Enquiry details</h2>
+          <p>
+            The best way to start is by sending a short overview of what you’re looking for,
+            along with any references, deadlines, or important details.
+          </p>
+          <ul class="clean-list">
+            <li>Commission enquiries</li>
+            <li>Creative collaborations</li>
+            <li>Portfolio questions</li>
+            <li>General contact</li>
+          </ul>
+        </div>
+
+        <div class="info-panel reveal">
+          <h2>Email</h2>
+          <p>
+            <a href="mailto:hello@rebeccaoliviaspeed.com" class="text-link">hello@rebeccaoliviaspeed.com</a>
+          </p>
+
+          <h2 class="contact-spacer">Social</h2>
+          <p>
+            <a href="#" class="text-link">Instagram</a>
+          </p>
+
+          <h2 class="contact-spacer">Response time</h2>
+          <p>Replies are usually sent as soon as possible depending on workload.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <h3>Rebecca Olivia Speed</h3>
+        <p>Illustration & character art portfolio.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="sketchbook.html">Sketchbook</a>
+        <a href="commissions.html">Commissions</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </footer>
 

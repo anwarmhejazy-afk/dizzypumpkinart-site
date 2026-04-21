@@ -1,111 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Rebecca Olivia Speed</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Learn more about illustrator and character artist Rebecca Olivia Speed." />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="sketch-home">
-
-  <header class="site-header sketch-header">
-    <nav class="navbar">
-      <a href="index.html" class="logo logo-sketch">
-        <img src="Images/logo.png" alt="Rebecca Olivia Speed Logo">
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="Rebecca Olivia Speed logo" />
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="work.html">Work</a></li>
-        <li><a href="sketchbook.html">Sketchbook</a></li>
-        <li><a href="commissions.html">Commissions</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+      <nav class="site-nav" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="sketchbook.html">Sketchbook</a>
+        <a href="commissions.html">Commissions</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <span class="accent-label">The Artist</span>
-      <h1>About ♡</h1>
-      <p>
-        I’m Rebecca Olivia Speed, an artist focused on illustration,
-        character work, and emotional visual storytelling.
-      </p>
-    </div>
-  </section>
+  <main>
+    <section class="page-hero section">
+      <div class="container narrow reveal">
+        <p class="eyebrow">About the Artist</p>
+        <h1>About Rebecca</h1>
+      </div>
+    </section>
 
-  <section class="section">
-    <div class="container split-section">
-      <div class="split-box reveal">
-        <h2>A visual language built around feeling</h2>
-        <p>
-          I create artwork that explores emotion, character, memory,
-          and the quieter parts of human experience.
-        </p>
-        <p>
-          I’m especially drawn to images that feel personal —
-          pieces that hold softness, tension, mood, and a sense of inner life.
-        </p>
-        <p>
-          Through illustration, I try to create work that feels alive,
-          expressive, and emotionally honest.
-        </p>
-      </div>
+    <section class="section">
+      <div class="container about-grid">
+        <div class="about-image reveal">
+          <img src="images/about.jpg" alt="Rebecca Olivia Speed" />
+        </div>
 
-      <div class="split-image reveal">
-        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80" alt="Artist portrait mood">
+        <div class="about-copy reveal">
+          <h2>Illustration rooted in emotion, softness, and story</h2>
+          <p>
+            Rebecca Olivia Speed is an illustrator and character artist whose work
+            centers on expressive storytelling, personal visual language, and emotionally
+            led character design.
+          </p>
+          <p>
+            Her portfolio blends softness, sketch energy, and atmosphere with a strong
+            focus on personality and visual feeling. Whether creating finished illustration
+            pieces or early sketchbook work, the heart of the process stays the same:
+            making work that feels human, intimate, and memorable.
+          </p>
+          <p>
+            Rebecca is available for selected commissions and creative projects.
+          </p>
+          <div class="hero-actions">
+            <a href="work.html" class="btn btn-dark">View Work</a>
+            <a href="contact.html" class="btn btn-link">Get in Touch</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section class="section">
-    <div class="container">
-      <div class="about-content reveal">
-        <p>
-          My work is inspired by emotion, identity, people, atmosphere,
-          and the strange beauty of things that are difficult to explain out loud.
-        </p>
-        <p>
-          I love creating characters and illustrations that feel intimate,
-          soft, expressive, and imperfect in the best way —
-          like fragments of a story caught somewhere between memory and imagination.
-        </p>
-        <p>
-          I’m interested in the tension between softness and chaos,
-          and I often explore that through line, expression, colour, texture, and mood.
-        </p>
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <h3>Rebecca Olivia Speed</h3>
+        <p>Illustration & character art portfolio.</p>
       </div>
-    </div>
-  </section>
-
-  <section class="section sketch-dark-band">
-    <div class="container">
-      <div class="band-header">
-        <h2 class="handwritten-heading light-heading">Want to see more? ✦</h2>
-      </div>
-      <div class="button-row">
-        <a href="work.html" class="btn btn-brush">View Work</a>
-        <a href="commissions.html" class="btn btn-sketch-link light-link">Commissions →</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer sketch-footer">
-    <div class="footer-inner">
-      <div class="footer-left">
-        <h3>© 2026 Rebecca Olivia Speed</h3>
-      </div>
-      <div class="footer-links">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
         <a href="work.html">Work</a>
+        <a href="sketchbook.html">Sketchbook</a>
         <a href="commissions.html">Commissions</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-      </div>
+      </nav>
     </div>
   </footer>
 

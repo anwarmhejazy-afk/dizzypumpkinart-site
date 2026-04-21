@@ -21,13 +21,19 @@ const navLinks = document.getElementById("navLinks");
 if (menuToggle && navLinks) {
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
-    menuToggle.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
-  });
 
-  navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("active");
-      menuToggle.textContent = "☰";
-    });
+    const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", String(!isExpanded));
   });
 }
+
+document.querySelectorAll("#navLinks a").forEach((link) => {
+  link.addEventListener("click", () => {
+    if (navLinks) {
+      navLinks.classList.remove("active");
+    }
+    if (menuToggle) {
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+});

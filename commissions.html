@@ -1,221 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Commissions | Rebecca Olivia Speed</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Commission information for custom illustration and character art by Rebecca Olivia Speed." />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="sketch-home">
-
-  <header class="site-header sketch-header">
-    <nav class="navbar">
-      <a href="index.html" class="logo logo-sketch">
-        <img src="Images/logo.png" alt="Rebecca Olivia Speed Logo">
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="Rebecca Olivia Speed logo" />
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="work.html">Work</a></li>
-        <li><a href="sketchbook.html">Sketchbook</a></li>
-        <li><a href="commissions.html" class="active">Commissions</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+      <nav class="site-nav" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="sketchbook.html">Sketchbook</a>
+        <a href="commissions.html" class="active">Commissions</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-
-    <section class="page-hero sketch-commissions-hero">
-      <div class="container sketch-commissions-hero-grid">
-
-        <div class="reveal">
-          <span class="accent-label">work with me</span>
-          <h1 class="sketch-page-title">Commissions ✦</h1>
-
-          <p class="sketch-page-copy">
-            If you would like a custom piece created in my style,
-            you can find general commission information below.
-          </p>
-
-          <p class="sketch-page-copy">
-            I’m open to selected projects including portraits,
-            character art, and personal illustrations.
-          </p>
-        </div>
-
-        <div class="commissions-side-note reveal">
-          <div class="sticky-note commissions-note-card">
-            custom<br>art ♡
-          </div>
-        </div>
-
+    <section class="page-hero section">
+      <div class="container narrow reveal">
+        <p class="eyebrow">Custom Artwork</p>
+        <h1>Commissions</h1>
+        <p class="page-intro">
+          If you’re interested in a custom illustration or character piece, here’s a simple
+          overview of the process and what to include in your enquiry.
+        </p>
       </div>
     </section>
 
     <section class="section">
-      <div class="container">
-        <div class="band-header reveal">
-          <h2 class="handwritten-heading">What I Offer ✦</h2>
+      <div class="container commission-grid">
+        <div class="info-panel reveal">
+          <h2>How it works</h2>
+          <ol class="clean-list numbered-list">
+            <li>Send an enquiry with your idea, references, and intended use.</li>
+            <li>Rebecca reviews the brief and confirms availability.</li>
+            <li>Scope, pricing, and timeline are discussed before work begins.</li>
+            <li>Artwork is developed with updates at agreed stages.</li>
+            <li>Final files are delivered once the project is complete.</li>
+          </ol>
         </div>
 
-        <div class="commission-offer-grid">
-
-          <article class="offer-paper reveal tilt-left">
-            <div class="paper-tape tape-top-left"></div>
-            <h3>Portrait Illustrations</h3>
-            <p>
-              Stylised portraits based on photos or references,
-              with a focus on mood, expression, and soft detail.
-            </p>
-          </article>
-
-          <article class="offer-paper reveal tilt-right">
-            <div class="paper-tape tape-top-center"></div>
-            <h3>Character Art</h3>
-            <p>
-              Original or existing characters brought to life through
-              expressive poses, personality, and visual storytelling.
-            </p>
-          </article>
-
-          <article class="offer-paper reveal tilt-left">
-            <div class="paper-tape tape-top-right"></div>
-            <h3>Personal Illustrations</h3>
-            <p>
-              Custom pieces inspired by your ideas, memories,
-              or concepts — interpreted in my style.
-            </p>
-          </article>
-
-          <article class="offer-paper reveal tilt-right">
-            <div class="paper-tape tape-top-left"></div>
-            <h3>Creative Projects</h3>
-            <p>
-              Open to collaborations, concept work,
-              and selected creative commissions.
-            </p>
-          </article>
-
+        <div class="info-panel reveal">
+          <h2>What to include</h2>
+          <ul class="clean-list">
+            <li>Type of commission</li>
+            <li>Character or subject details</li>
+            <li>Visual references or mood references</li>
+            <li>Preferred deadline</li>
+            <li>Personal or commercial use</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section sketch-dark-band">
-      <div class="container">
-        <div class="band-header reveal">
-          <h2 class="handwritten-heading light-heading">How It Works ♡</h2>
+    <section class="section soft-section">
+      <div class="container commission-grid">
+        <div class="info-panel reveal">
+          <h2>Commission notes</h2>
+          <ul class="clean-list">
+            <li>Pricing varies depending on scope and complexity.</li>
+            <li>Timelines depend on current workload and project size.</li>
+            <li>Clear references always help the process.</li>
+            <li>Commercial work should be stated from the beginning.</li>
+          </ul>
         </div>
 
-        <div class="commission-process-strip">
-
-          <div class="process-note reveal">
-            <div class="mini-icon">◌</div>
-            <h3>1. Inquiry</h3>
-            <p>Send your idea, references, and details through the contact form or Instagram.</p>
-          </div>
-
-          <div class="process-note reveal">
-            <div class="mini-icon">✎</div>
-            <h3>2. Discussion</h3>
-            <p>We go through the concept, mood, and expectations to shape the direction of the piece.</p>
-          </div>
-
-          <div class="process-note reveal">
-            <div class="mini-icon">✦</div>
-            <h3>3. Creation</h3>
-            <p>I begin working on the illustration, focusing on composition, emotion, and visual feel.</p>
-          </div>
-
-          <div class="process-note reveal">
-            <div class="mini-icon">✉</div>
-            <h3>4. Final Artwork</h3>
-            <p>The final piece is delivered once complete and approved.</p>
-          </div>
-
+        <div class="info-panel reveal">
+          <h2>Best for</h2>
+          <ul class="clean-list">
+            <li>Original characters</li>
+            <li>Portrait-inspired illustrations</li>
+            <li>Story-led visual pieces</li>
+            <li>Personal projects and gifts</li>
+            <li>Selected creative commissions</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="band-header reveal">
-          <h2 class="handwritten-heading">Notes ✦</h2>
-        </div>
-
-        <div class="commission-notes-grid">
-
-          <div class="mini-about-note reveal">
-            <h3>Availability</h3>
-            <p>
-              Commission availability may vary depending on workload and current projects.
-            </p>
-          </div>
-
-          <div class="mini-about-note reveal offset-about-note">
-            <h3>Pricing</h3>
-            <p>
-              Pricing depends on the type of artwork, complexity,
-              and project requirements.
-            </p>
-          </div>
-
-          <div class="mini-about-note reveal">
-            <h3>Turnaround</h3>
-            <p>
-              Timeframes vary depending on the piece,
-              but will always be discussed before starting.
-            </p>
-          </div>
-
-          <div class="mini-about-note reveal offset-about-note">
-            <h3>Communication</h3>
-            <p>
-              Clear communication is important — updates may be shared
-              depending on the project.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="panel reveal sketch-commission-panel">
-          <span class="accent-label">interested?</span>
-          <h2 class="work-panel-title">Interested in a commission?</h2>
-          <p class="muted sketch-panel-copy">
-            If you have an idea or would like to work together,
-            feel free to get in touch and tell me about your project.
+    <section class="section accent-section">
+      <div class="container cta-panel reveal">
+        <div>
+          <p class="eyebrow">Ready to enquire?</p>
+          <h2>Let’s talk about your idea</h2>
+          <p>
+            Use the contact page to send a commission request with a short description
+            and references.
           </p>
-
-          <div class="button-row" style="margin-top: 18px;">
-            <a href="contact.html" class="btn btn-brush">Send Inquiry</a>
-            <a href="work.html" class="btn btn-sketch-link">View Work →</a>
-          </div>
+        </div>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-dark">Contact Rebecca</a>
+          <a href="work.html" class="btn btn-light">View Portfolio</a>
         </div>
       </div>
     </section>
-
   </main>
 
-  <footer class="site-footer sketch-footer">
-    <div class="footer-inner">
-      <div class="footer-left">
-        <h3>© 2026 Rebecca Olivia Speed</h3>
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <h3>Rebecca Olivia Speed</h3>
+        <p>Illustration & character art portfolio.</p>
       </div>
-
-      <div class="footer-links">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
         <a href="work.html">Work</a>
+        <a href="sketchbook.html">Sketchbook</a>
         <a href="commissions.html">Commissions</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-      </div>
+      </nav>
     </div>
   </footer>
 

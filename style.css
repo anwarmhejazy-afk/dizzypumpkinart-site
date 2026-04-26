@@ -91,45 +91,50 @@ span {
   color: var(--text-soft);
 }
 
+/* ================================
+   PREMIUM HEADER + LOGO
+================================ */
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(247, 242, 236, 0.9);
+  background: rgba(247, 242, 236, 0.94);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line);
 }
 
 .nav-wrap {
-  min-height: 80px;
+  min-height: 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 28px;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  max-width: 260px;
+  max-width: 330px;
+  margin-left: 8px;
 }
 
 .brand img {
-  height: 52px;
+  height: 76px;
   width: auto;
-  max-width: 240px;
+  max-width: 320px;
   object-fit: contain;
   transition: var(--transition);
 }
 
 .brand img:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 34px;
 }
 
 .site-nav a {
@@ -190,6 +195,10 @@ span {
 .menu-toggle[aria-expanded="true"] span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
+
+/* ================================
+   HERO
+================================ */
 
 .hero {
   padding-top: 70px;
@@ -299,6 +308,10 @@ span {
 .hero-image-card:hover img {
   transform: scale(1.035);
 }
+
+/* ================================
+   SECTIONS / CARDS
+================================ */
 
 .section-head {
   margin-bottom: 30px;
@@ -427,6 +440,10 @@ span {
   margin-top: 28px;
 }
 
+/* ================================
+   FOOTER
+================================ */
+
 .site-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   background:
@@ -469,6 +486,10 @@ span {
   color: #fff;
 }
 
+/* ================================
+   ANIMATION
+================================ */
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -479,6 +500,10 @@ span {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ================================
+   RESPONSIVE
+================================ */
 
 @media (max-width: 1100px) {
   .hero-grid,
@@ -510,16 +535,17 @@ span {
   }
 
   .nav-wrap {
-    min-height: 78px;
+    min-height: 82px;
   }
 
   .brand {
-    max-width: 190px;
+    max-width: 230px;
+    margin-left: 0;
   }
 
   .brand img {
-    height: 44px;
-    max-width: 185px;
+    height: 56px;
+    max-width: 220px;
   }
 
   .menu-toggle {
@@ -528,7 +554,7 @@ span {
 
   .site-nav {
     position: absolute;
-    top: 78px;
+    top: 82px;
     left: 12px;
     right: 12px;
     display: none;
@@ -600,12 +626,12 @@ span {
 
 @media (max-width: 420px) {
   .brand {
-    max-width: 160px;
+    max-width: 190px;
   }
 
   .brand img {
-    height: 38px;
-    max-width: 155px;
+    height: 48px;
+    max-width: 185px;
   }
 
   .hero-copy h1,

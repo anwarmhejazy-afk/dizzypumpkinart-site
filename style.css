@@ -718,3 +718,56 @@ span {
     padding: 22px;
   }
 }
+
+/* ================================
+   MOBILE GALLERY FIX
+================================ */
+
+@media (max-width: 768px) {
+  .page-hero.section {
+    padding: 46px 0 36px;
+  }
+
+  .page-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .page-intro {
+    font-size: 0.98rem;
+  }
+
+  .art-grid,
+  .art-grid-large {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .art-card {
+    border-radius: 18px;
+  }
+
+  .art-card img {
+    aspect-ratio: 1 / 1.22;
+    object-fit: cover;
+  }
+
+  .art-card-detail .art-info {
+    display: none;
+  }
+
+  .cta-panel {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .art-grid,
+  .art-grid-large {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .art-card img {
+    aspect-ratio: 1 / 1.25;
+  }
+}

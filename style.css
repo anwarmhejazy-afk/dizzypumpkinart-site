@@ -941,7 +941,7 @@ span {
 }
 
 .work-piece:hover img {
-  transform: scale(1.025);
+  transform: scale(1.02) rotate(0.4deg);
 }
 
 .work-piece span {
@@ -949,14 +949,16 @@ span {
   left: 14px;
   bottom: 14px;
   z-index: 4;
-  background: rgba(248, 240, 232, 0.88);
+  background: rgba(248, 240, 232, 0.92);
   color: var(--text);
-  padding: 8px 12px;
-  font-size: 0.78rem;
+  padding: 10px 14px;
+  font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   transform: rotate(-1deg);
+  border: 1px solid rgba(23,21,20,0.08);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
 @media (max-width: 900px) {

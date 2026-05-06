@@ -1154,3 +1154,23 @@ span {
     transform: none !important;
   }
 }
+
+/* ================================
+   FOOTER CREDIT
+================================ */
+
+.site-credit {
+  margin-top: 18px;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.55);
+}
+
+.site-credit a {
+  color: rgba(255,255,255,0.82);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  transition: 0.3s ease;
+}
+
+.site-credit a:hover {
+  color: #fff;
+}

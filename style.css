@@ -1091,3 +1091,66 @@ span {
 .about-image:hover img {
   transform: rotate(-1deg) scale(1.01);
 }
+
+/* ================================
+   CONTACT PAGE POLISH
+================================ */
+
+.contact-page .contact-hero {
+  position: relative;
+}
+
+.contact-page .contact-hero::after {
+  content: "send a note ♡";
+  position: absolute;
+  right: 8%;
+  top: 28%;
+  background: #d6c4b8;
+  color: #4f4540;
+  padding: 16px 18px;
+  transform: rotate(6deg);
+  box-shadow: var(--shadow);
+  font-size: 0.9rem;
+}
+
+.contact-card {
+  position: relative;
+}
+
+.contact-card:nth-child(1) {
+  transform: rotate(-0.6deg);
+}
+
+.contact-card:nth-child(2) {
+  transform: rotate(0.8deg);
+}
+
+.contact-label {
+  margin: 22px 0 4px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.contact-sticky-note {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 16px 18px;
+  background: rgba(217, 163, 163, 0.82);
+  color: var(--text);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  transform: rotate(-3deg);
+  max-width: 260px;
+}
+
+@media (max-width: 768px) {
+  .contact-page .contact-hero::after {
+    display: none;
+  }
+
+  .contact-card {
+    transform: none !important;
+  }
+}

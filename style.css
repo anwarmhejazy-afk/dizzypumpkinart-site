@@ -1045,3 +1045,49 @@ span {
 .sketchbook-page .art-card:hover img {
   filter: saturate(1.05) contrast(1.03);
 }
+
+/* ================================
+   ABOUT PAGE POLISH
+================================ */
+
+.about-copy {
+  position: relative;
+}
+
+.about-note {
+  display: inline-block;
+  margin: 24px 0;
+  padding: 16px 18px;
+  background: rgba(248,240,232,0.95);
+  border: 1px solid rgba(23,21,20,0.08);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  transform: rotate(1.5deg);
+  max-width: 360px;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  width: 120px;
+  height: 28px;
+  background: rgba(217,163,163,0.82);
+  transform: translateX(-50%) rotate(-4deg);
+  z-index: 3;
+}
+
+.about-image img {
+  transition: 0.3s ease;
+}
+
+.about-image:hover img {
+  transform: rotate(-1deg) scale(1.01);
+}

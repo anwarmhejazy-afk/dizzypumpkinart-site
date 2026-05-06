@@ -999,3 +999,49 @@ span {
     font-size: 0.7rem;
   }
 }
+
+/* ================================
+   SKETCHBOOK POLISH
+================================ */
+
+.sketch-head {
+  position: relative;
+}
+
+.sketch-head h2 {
+  transform: rotate(-1deg);
+}
+
+.sketch-note {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 14px 18px;
+  background: rgba(248, 240, 232, 0.95);
+  border: 1px solid rgba(23,21,20,0.08);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-soft);
+  transform: rotate(2deg);
+  max-width: 340px;
+}
+
+.sketchbook-page .art-card:nth-child(3n) {
+  transform: rotate(-1.5deg);
+}
+
+.sketchbook-page .art-card:nth-child(4n) {
+  transform: rotate(1.5deg);
+}
+
+.sketchbook-page .art-card::before {
+  opacity: 1;
+}
+
+.sketchbook-page .art-card img {
+  filter: saturate(0.92) contrast(1.01);
+}
+
+.sketchbook-page .art-card:hover img {
+  filter: saturate(1.05) contrast(1.03);
+}

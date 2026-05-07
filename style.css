@@ -1158,7 +1158,7 @@ span {
 .footer-wrap {
   min-height: 150px;
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: flex-start;
   gap: 40px;
   padding: 34px 0;
@@ -1168,6 +1168,7 @@ span {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .footer-links-wrap {

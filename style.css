@@ -45,7 +45,7 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.18;
+  opacity: 0.11;
   z-index: 9999;
   background-image:
     linear-gradient(rgba(23, 21, 20, 0.045) 1px, transparent 1px),
@@ -498,7 +498,7 @@ span {
 }
 
 .art-card:hover {
-  transform: translateY(-8px) rotate(0deg);
+   transform: translateY(-6px) rotate(0deg) scale(1.01);
 }
 
 .art-card img {
@@ -648,8 +648,10 @@ span {
 
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(22px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.show {
@@ -1239,4 +1241,9 @@ span {
   .footer-links-wrap {
     align-items: flex-start;
   }
+}
+
+::selection {
+  background: rgba(217,163,163,0.42);
+  color: #171717;
 }

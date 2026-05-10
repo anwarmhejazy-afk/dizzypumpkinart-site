@@ -3,7 +3,7 @@ import { client } from "./sanity.js";
 async function loadCommissionArtwork() {
   try {
     const artworks = await client.fetch(`
-      *[_type == "artwork" && category == "commission"] | order(displayOrder asc){
+      *[_type == "artwork" && category == "Commission"] | order(displayOrder asc){
         title,
         category,
         year,
@@ -20,7 +20,7 @@ async function loadCommissionArtwork() {
     if (!artworks || artworks.length === 0) return;
 
     const sanityCards = artworks.map((art) => `
-      <div class="art-card show">
+      <div class="art-card show sanity-card">
         <img src="${art.imageUrl}" alt="${art.title}" />
       </div>
     `).join("");

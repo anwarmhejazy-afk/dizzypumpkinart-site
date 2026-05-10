@@ -26,7 +26,6 @@ async function loadCommissionArtwork() {
     `).join("");
 
     commissionsGrid.insertAdjacentHTML("beforeend", sanityCards);
-
     commissionsGrid.classList.add("show");
 
   } catch (error) {

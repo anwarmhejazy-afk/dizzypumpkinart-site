@@ -14,9 +14,7 @@ async function loadPortfolioFromSanity() {
     console.log("Portfolio Loaded:", artworks);
 
     const portfolioGrid = document.getElementById("portfolioGrid");
-    if (!portfolioGrid) return;
-
-    if (!artworks || artworks.length === 0) return;
+    if (!portfolioGrid || !artworks || artworks.length === 0) return;
 
     const sanityCards = artworks.map((art) => `
       <a href="work.html" class="art-card show sanity-card">

@@ -1,31 +1,30 @@
-import { client } from './sanity.js'
+import { client } from "./sanity.js";
 
-async function loadPortfolioFromSanity() {
-  try {
-    const artworks = await client.fetch(`
-      *[_type == "artwork"] | order(displayOrder asc){
-        title,
-        category,
-        year,
-        "imageUrl": image.asset->url
-      }
-    `)
+const query = `*[_type == "artwork" && featured == true] | order(displayOrder asc){
+  title,
+  category,
+  year,
+  "imageUrl": image.asset->url
+}`;
 
-    console.log("Portfolio Loaded:", artworks)
+async function loadHomepageArtwork() {
+  const artworks = await client.fetch(query);
 
-    const portfolioGrid = document.getElementById("portfolioGrid")
+  console.log("SANITY DATA:", artworks);
 
-    if (!portfolioGrid) return
+  const portfolioGrid = document.getElementById("portfolioGrid");
 
-    portfolioGrid.innerHTML = artworks.map((art) => `
-      <a href="work.html" class="art-card reveal">
-        <img src="${art.imageUrl}" alt="${art.title}" />
-      </a>
-    `).join("")
+  if (!portfolioGrid) return;
 
-  } catch (error) {
-    console.error("Sanity Portfolio Error:", error)
-  }
+  portfolioGrid.innerHTML = artworks
+    .map(
+      (art) => `
+        <a href="work.html" class="art-card reveal">
+          <img src="${art.imageUrl}" alt="${art.title}" />
+        </a>
+      `
+    )
+    .join("");
 }
 
-loadPortfolioFromSanity()
+loadHomepageArtwork();

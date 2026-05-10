@@ -1,4 +1,4 @@
-import { client } from './sanity.js'
+import { client } from "./sanity.js";
 
 async function loadPortfolioFromSanity() {
   try {
@@ -9,25 +9,27 @@ async function loadPortfolioFromSanity() {
         year,
         "imageUrl": image.asset->url
       }
-    `)
+    `);
 
-    console.log("Portfolio Loaded:", artworks)
+    console.log("Portfolio Loaded:", artworks);
 
-    const portfolioGrid = document.getElementById("portfolioGrid")
+    const portfolioGrid = document.getElementById("portfolioGrid");
+    if (!portfolioGrid) return;
 
-    if (!portfolioGrid) return
+    if (!artworks || artworks.length === 0) return;
 
     const sanityCards = artworks.map((art) => `
-      <a href="work.html" class="art-card reveal">
+      <a href="work.html" class="art-card show sanity-card">
         <img src="${art.imageUrl}" alt="${art.title}" />
       </a>
-    `).join("")
+    `).join("");
 
-    portfolioGrid.insertAdjacentHTML("beforeend", sanityCards)
+    portfolioGrid.insertAdjacentHTML("beforeend", sanityCards);
+    portfolioGrid.classList.add("show");
 
   } catch (error) {
-    console.error("Sanity Portfolio Error:", error)
+    console.error("Sanity Portfolio Error:", error);
   }
 }
 
-loadPortfolioFromSanity()
+loadPortfolioFromSanity();

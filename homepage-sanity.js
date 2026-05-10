@@ -14,11 +14,11 @@ async function loadHomepageArtwork() {
     console.log("SANITY DATA:", artworks);
 
     const portfolioGrid = document.getElementById("portfolioGrid");
+
     if (!portfolioGrid) return;
 
     if (!artworks || artworks.length === 0) {
-      console.warn("No featured Sanity artworks found. Keeping static images.");
-      portfolioGrid.classList.add("show");
+      console.warn("No featured Sanity artworks found.");
       return;
     }
 
@@ -33,7 +33,6 @@ async function loadHomepageArtwork() {
       .join("");
 
     portfolioGrid.insertAdjacentHTML("beforeend", sanityCards);
-    portfolioGrid.classList.add("show");
 
   } catch (error) {
     console.error("Sanity Portfolio Error:", error);

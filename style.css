@@ -1048,7 +1048,7 @@ span {
 }
 
 .sketchbook-page .art-card:hover img {
-  filter: saturate(1.05) contrast(1.03);
+  filter: saturate(1.08) contrast(1.04) brightness(1.01);
 }
 
 /* ================================

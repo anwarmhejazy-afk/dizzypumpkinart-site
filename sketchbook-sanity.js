@@ -20,12 +20,13 @@ async function loadSketchbookArtwork() {
     if (!artworks || artworks.length === 0) return;
 
     const sanityCards = artworks.map((art) => `
-      <div class="sketch-card reveal">
+      <div class="art-card show">
         <img src="${art.imageUrl}" alt="${art.title}" />
       </div>
     `).join("");
 
     sketchbookGrid.insertAdjacentHTML("beforeend", sanityCards);
+    sketchbookGrid.classList.add("show");
 
   } catch (error) {
     console.error("Sketchbook Sanity Error:", error);

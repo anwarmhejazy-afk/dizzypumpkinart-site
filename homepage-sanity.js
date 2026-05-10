@@ -13,8 +13,11 @@ async function loadPortfolioFromSanity() {
 
     console.log("Portfolio Loaded:", artworks);
 
-    const portfolioGrid = document.getElementById("portfolioGrid");
-    if (!portfolioGrid || !artworks || artworks.length === 0) return;
+    const portfolioGrid =
+      document.getElementById("portfolioGrid") ||
+      document.querySelector(".art-grid");
+
+if (!portfolioGrid || !artworks || artworks.length === 0) return;
 
     const sanityCards = artworks.map((art) => `
       <a href="work.html" class="art-card show sanity-card">

@@ -1,42 +1,33 @@
-import { client } from "./sanity.js";
+import { client } from './sanity.js'
 
-const query = `*[_type == "artwork" && featured == true] | order(displayOrder asc){
-  title,
-  category,
-  year,
-  "imageUrl": image.asset->url
-}`;
-
-async function loadHomepageArtwork() {
+async function loadPortfolioFromSanity() {
   try {
-    const artworks = await client.fetch(query);
+    const artworks = await client.fetch(`
+      *[_type == "artwork"] | order(displayOrder asc){
+        title,
+        category,
+        year,
+        "imageUrl": image.asset->url
+      }
+    `)
 
-    console.log("SANITY DATA:", artworks);
+    console.log("Portfolio Loaded:", artworks)
 
-    const portfolioGrid = document.getElementById("portfolioGrid");
+    const portfolioGrid = document.getElementById("portfolioGrid")
 
-    if (!portfolioGrid) return;
+    if (!portfolioGrid) return
 
-    if (!artworks || artworks.length === 0) {
-      console.warn("No featured Sanity artworks found.");
-      return;
-    }
+    const sanityCards = artworks.map((art) => `
+      <a href="work.html" class="art-card reveal">
+        <img src="${art.imageUrl}" alt="${art.title}" />
+      </a>
+    `).join("")
 
-    const sanityCards = artworks
-      .map(
-        (art) => `
-          <a href="work.html" class="art-card show">
-            <img src="${art.imageUrl}" alt="${art.title}" />
-          </a>
-        `
-      )
-      .join("");
-
-    portfolioGrid.insertAdjacentHTML("beforeend", sanityCards);
+    portfolioGrid.insertAdjacentHTML("beforeend", sanityCards)
 
   } catch (error) {
-    console.error("Sanity Portfolio Error:", error);
+    console.error("Sanity Portfolio Error:", error)
   }
 }
 
-loadHomepageArtwork();
+loadPortfolioFromSanity()

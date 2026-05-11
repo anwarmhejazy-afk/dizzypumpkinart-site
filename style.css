@@ -1273,3 +1273,90 @@ span {
   object-fit: contain;
   display: block;
 }
+
+/* ================================
+   FINAL MOBILE + FOOTER FIXES
+================================ */
+
+/* Remove ugly click/focus box around logo */
+.brand,
+.brand:focus,
+.brand:active,
+.brand img,
+.brand img:focus,
+.brand img:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Keep logo clickable but clean */
+.brand {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Instagram icon in footer */
+.footer-instagram::before {
+  content: "◎";
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+/* Mobile title fixes */
+@media (max-width: 700px) {
+  .page-hero h1,
+  .work-hero h1,
+  .contact-page h1,
+  .commissions-page h1 {
+    font-size: clamp(3.2rem, 15vw, 5.8rem) !important;
+    line-height: 0.9 !important;
+    max-width: 100%;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
+  .contact-page .page-hero h1 {
+    font-size: clamp(3rem, 14vw, 5rem) !important;
+  }
+
+  .page-hero {
+    overflow: hidden;
+  }
+}
+
+/* Work page mobile: make featured section less long */
+@media (max-width: 700px) {
+  .work-editorial-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px !important;
+  }
+
+  .work-piece-large {
+    grid-column: span 2 !important;
+  }
+
+  .work-piece img,
+  .work-piece-large img {
+    height: auto !important;
+    max-height: 360px;
+    object-fit: cover;
+  }
+}
+
+/* Sanity image fitting */
+.sanity-card {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+.sanity-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #f3e8df;
+}

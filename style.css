@@ -1251,14 +1251,9 @@ span {
   color: #171717;
 }
 
-/* Sanity uploaded artwork: show full image */
-.sanity-card img,
-#sketchbookGrid .art-card img,
-#workGrid .art-card img,
-#commissionsGrid .art-card img {
-  object-fit: contain;
-  background: #f3e8df;
-}
+/* ================================
+   FINAL CLEAN OVERRIDES
+================================ */
 
 /* Sanity dynamic images */
 .sanity-card {
@@ -1267,96 +1262,245 @@ span {
   visibility: visible !important;
 }
 
-.sanity-card img {
+.sanity-card img,
+#sketchbookGrid .art-card img,
+#workGrid .art-card img,
+#commissionsGrid .art-card img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: contain !important;
   display: block;
+  background: #f3e8df;
 }
 
-/* ================================
-   FINAL MOBILE + FOOTER FIXES
-================================ */
-
-/* Remove ugly click/focus box around logo */
-.brand,
-.brand:focus,
-.brand:active,
-.brand img,
-.brand img:focus,
-.brand img:active {
-  outline: none !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-/* Keep logo clickable but clean */
+/* Disable logo click/focus/cursor */
 .brand {
-  -webkit-tap-highlight-color: transparent;
+  pointer-events: none !important;
+  cursor: default !important;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
-/* Instagram icon in footer */
+.brand,
+.brand *,
+.brand:focus,
+.brand:focus-visible,
+.brand:active {
+  outline: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Real Instagram icon */
 .footer-instagram::before {
-  content: "◎";
+  content: "";
+  width: 16px;
+  height: 16px;
   display: inline-block;
-  margin-right: 8px;
-  font-size: 1rem;
-  vertical-align: middle;
+  margin-right: 9px;
+  vertical-align: -3px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm5.2-2.4a1 1 0 1 1 0 2 1 1 0 0 1 0-2z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm5.2-2.4a1 1 0 1 1 0 2 1 1 0 0 1 0-2z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
-/* Mobile title fixes */
+/* Mobile final layout */
 @media (max-width: 700px) {
+  .page-hero.section {
+    padding-top: 62px !important;
+    padding-bottom: 42px !important;
+  }
+
   .page-hero h1,
   .work-hero h1,
-  .contact-page h1,
-  .commissions-page h1 {
-    font-size: clamp(3.2rem, 15vw, 5.8rem) !important;
+  .sketchbook-page .page-hero h1,
+  body:has(.site-nav a[href="commissions.html"].active) .page-hero h1,
+  .contact-page .page-hero h1 {
+    font-size: 2.75rem !important;
     line-height: 0.9 !important;
-    max-width: 100%;
-    word-break: normal;
-    overflow-wrap: normal;
+    max-width: 92vw !important;
+    transform: none !important;
+    letter-spacing: -1px !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+
+  body:has(.site-nav a[href="commissions.html"].active) .page-hero h1 {
+    font-size: 2.45rem !important;
+  }
+
+  .sketchbook-page .page-hero h1 {
+    font-size: 2.55rem !important;
   }
 
   .contact-page .page-hero h1 {
-    font-size: clamp(3rem, 14vw, 5rem) !important;
+    font-size: 2.35rem !important;
   }
 
-  .page-hero {
-    overflow: hidden;
+  .section {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+
+  .accent-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .cta-panel h2,
+  .accent-section h2 {
+    font-size: 1.85rem !important;
+    line-height: 0.95 !important;
+    max-width: 330px !important;
+    transform: none !important;
+  }
+
+  .cta-panel p,
+  .accent-section p {
+    font-size: 0.85rem !important;
+    line-height: 1.55 !important;
+    max-width: 330px !important;
+  }
+
+  .cta-panel {
+    gap: 20px !important;
   }
 }
 
-/* Work page mobile: make featured section less long */
+/* FINAL: reduce dark CTA empty gap + make Work featured 2-column on mobile */
 @media (max-width: 700px) {
-  .work-editorial-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 18px !important;
+  .accent-section {
+    min-height: auto !important;
   }
 
+  .cta-panel {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: auto !important;
+  }
+
+  .cta-panel::after {
+    display: none !important;
+  }
+
+  .work-editorial-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .work-piece,
   .work-piece-large {
-    grid-column: span 2 !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
   }
 
   .work-piece img,
   .work-piece-large img {
-    height: auto !important;
-    max-height: 360px;
-    object-fit: cover;
+    min-height: 0 !important;
+    height: 210px !important;
+    object-fit: cover !important;
+  }
+
+  .work-piece span {
+    font-size: 0.58rem !important;
+    padding: 7px 9px !important;
   }
 }
 
-/* Sanity image fitting */
-.sanity-card {
-  opacity: 1 !important;
-  transform: none !important;
-  visibility: visible !important;
+/* FINAL: remove mobile dark CTA excessive empty space */
+@media (max-width: 700px) {
+  .accent-section.section {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+
+  .accent-section .cta-panel {
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 0 !important;
+    gap: 18px !important;
+  }
+
+  .accent-section .cta-actions {
+    margin-top: 12px !important;
+  }
+
+  .accent-section .btn {
+    min-height: 42px !important;
+    padding: 0 18px !important;
+    width: fit-content !important;
+  }
 }
 
-.sanity-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  background: #f3e8df;
+/* FINAL mobile CTA alignment + footer spacing */
+@media (max-width: 700px) {
+  .accent-section .section-inner,
+  .accent-section .cta-panel {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .accent-section h2,
+  .accent-section p {
+    max-width: 100% !important;
+  }
+
+  .accent-section .cta-actions {
+    margin-top: 8px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .site-footer {
+    padding-top: 28px !important;
+  }
+
+  .footer-grid {
+    gap: 10px !important;
+  }
+}
+
+/* FINAL: premium mobile dark CTA */
+@media (max-width: 700px) {
+  .accent-section.section {
+    padding: 34px 0 !important;
+  }
+
+  .accent-section .cta-panel {
+    width: calc(100% - 28px) !important;
+    margin: 0 auto !important;
+    padding: 22px 18px !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 10px !important;
+    background: rgba(255,255,255,0.025) !important;
+    gap: 14px !important;
+  }
+
+  .accent-section .eyebrow {
+    margin-bottom: 8px !important;
+    font-size: 0.62rem !important;
+  }
+
+  .accent-section h2 {
+    font-size: 1.55rem !important;
+    line-height: 1.05 !important;
+    max-width: 260px !important;
+  }
+
+  .accent-section p {
+    font-size: 0.78rem !important;
+    line-height: 1.45 !important;
+    max-width: 270px !important;
+  }
+
+  .accent-section .cta-actions {
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .accent-section .btn {
+    width: auto !important;
+    min-height: 38px !important;
+    padding: 0 16px !important;
+    font-size: 0.68rem !important;
+  }
 }

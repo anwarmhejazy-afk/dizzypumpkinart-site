@@ -3,7 +3,7 @@ import { client } from "./sanity.js";
 async function loadPortfolioFromSanity() {
   try {
     const artworks = await client.fetch(`
-      *[_type == "artwork"] | order(displayOrder asc){
+      *[_type == "artwork" && featured == true] | order(displayOrder asc){
         title,
         category,
         year,

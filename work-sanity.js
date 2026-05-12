@@ -1,6 +1,6 @@
 import { client } from "./sanity.js";
 
-const query = `*[_type == "artwork"] | order(displayOrder asc){
+const query = `*[_type == "artwork" && featured == true && hidden != true] | order(displayOrder asc){
   title,
   category,
   year,

@@ -35,6 +35,26 @@ export default defineType({
     }),
 
     defineField({
+  name: 'galleryImages',
+  title: 'Extra Gallery Images',
+  type: 'array',
+  of: [
+    {
+      type: 'image',
+      options: {hotspot: true},
+      fields: [
+        {
+          name: 'caption',
+          title: 'Caption',
+          type: 'string',
+        },
+      ],
+    },
+  ],
+  description: 'Optional extra images for process sketches, closeups, or additional project images.',
+}),
+
+    defineField({
       name: 'category',
       title: 'Category',
       type: 'string',

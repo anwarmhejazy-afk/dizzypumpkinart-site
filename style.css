@@ -1575,7 +1575,7 @@ span {
   body:has(.site-nav a[href="commissions.html"].active) .page-hero.section::before {
     background-image:
       linear-gradient(rgba(248,240,232,0.05), rgba(248,240,232,0.05)),
-      url("./images/commissions/netflix-1.jpg") !important;
+      url("./images/commissions/netflix-0.jpg") !important;
   }
 
 body:has(.site-nav a[href="contact.html"].active) .page-hero.section::before {

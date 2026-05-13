@@ -1504,3 +1504,103 @@ span {
     font-size: 0.68rem !important;
   }
 }
+
+/* =========================================
+   FINAL DESKTOP HERO FIX
+========================================= */
+
+@media (min-width: 1024px) {
+  .page-hero.section {
+    position: relative !important;
+    overflow: hidden !important;
+    min-height: 360px !important;
+    padding: 74px 0 60px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .page-hero .container.narrow {
+    display: block !important;
+    max-width: 1180px !important;
+    width: min(1180px, calc(100% - 80px)) !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    z-index: 5 !important;
+  }
+
+  .page-hero h1 {
+    position: relative !important;
+    z-index: 6 !important;
+    max-width: 620px !important;
+    font-size: clamp(4rem, 5.2vw, 5.6rem) !important;
+    line-height: 0.9 !important;
+    margin: 0 0 28px !important;
+  }
+
+  .page-hero .eyebrow,
+  .page-hero .page-intro {
+    max-width: 430px !important;
+    position: relative !important;
+    z-index: 6 !important;
+  }
+
+  .page-hero.section::before {
+    content: "" !important;
+    position: absolute !important;
+    right: 9% !important;
+    top: 50% !important;
+    width: 250px !important;
+    height: 300px !important;
+    transform: translateY(-50%) rotate(-4deg) !important;
+    border: 1px solid rgba(23,21,20,0.08) !important;
+    box-shadow: 0 22px 60px rgba(0,0,0,0.08) !important;
+    z-index: 1 !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  body:has(.site-nav a[href="work.html"].active) .page-hero.section::before {
+    background-image:
+      linear-gradient(rgba(248,240,232,0.06), rgba(248,240,232,0.06)),
+      url("./images/work/work-0.jpg") !important;
+  }
+
+  body.sketchbook-page .page-hero.section::before {
+    background-image:
+      linear-gradient(rgba(248,240,232,0.05), rgba(248,240,232,0.05)),
+      url("./images/sketchbook/sketch-2.jpg") !important;
+  }
+
+  body:has(.site-nav a[href="commissions.html"].active) .page-hero.section::before {
+    background-image:
+      linear-gradient(rgba(248,240,232,0.05), rgba(248,240,232,0.05)),
+      url("./images/commissions/netflix-1.jpg") !important;
+  }
+
+body:has(.site-nav a[href="contact.html"].active) .page-hero.section::before {
+  background-image:
+    linear-gradient(rgba(248,240,232,0.06), rgba(248,240,232,0.06)),
+    url("./images/contact/contact-hero-art.jpg")!important;
+}
+
+  .page-hero.section::after {
+    display: none !important;
+  }
+
+  body:has(.site-nav a[href="about.html"].active) .page-hero.section::before {
+    display: none !important;
+  }
+
+  body:has(.site-nav a[href="about.html"].active) .page-hero .container.narrow {
+    text-align: center !important;
+  }
+
+  body:has(.site-nav a[href="about.html"].active) .page-hero h1,
+  body:has(.site-nav a[href="about.html"].active) .page-hero .eyebrow,
+  body:has(.site-nav a[href="about.html"].active) .page-hero .page-intro {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}

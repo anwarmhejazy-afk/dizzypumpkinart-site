@@ -4,6 +4,7 @@ const query = `*[_type == "artwork" && featured == true && hidden != true] | ord
   title,
   category,
   year,
+  "slug": slug.current,
   "imageUrl": image.asset->url
 }`;
 
@@ -25,7 +26,7 @@ async function loadWorkArtwork() {
     const sanityCards = artworks
       .map(
         (art) => `
-          <a href="${art.imageUrl}" class="gallery-card show" target="_blank" rel="noopener">
+          <a href="artwork.html?slug=${art.slug}" class="gallery-card show">
             <img src="${art.imageUrl}" alt="${art.title}" />
           </a>
         `

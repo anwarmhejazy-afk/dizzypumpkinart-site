@@ -1604,3 +1604,46 @@ body:has(.site-nav a[href="contact.html"].active) .page-hero.section::before {
     margin-right: auto !important;
   }
 }
+
+/* Artwork detail page */
+.artwork-detail-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 58px;
+  align-items: start;
+}
+
+.artwork-main-image img,
+.artwork-gallery-item img {
+  width: 100%;
+  background: #f3e8df;
+  box-shadow: var(--shadow-strong);
+}
+
+.artwork-info h1 {
+  margin: 0 0 18px;
+  font-family: "Comic Sans MS", "Bradley Hand", "Courier New", cursive;
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.artwork-year,
+.artwork-description,
+.gallery-caption {
+  color: var(--text-soft);
+}
+
+.artwork-gallery-grid {
+  margin-top: 58px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 768px) {
+  .artwork-detail-layout,
+  .artwork-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}

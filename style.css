@@ -1268,7 +1268,7 @@ span {
 #commissionsGrid .art-card img {
   width: 100%;
   height: 100%;
-  object-fit: contain !important;
+  object-fit: cover !important;
   display: block;
   background: #f3e8df;
 }

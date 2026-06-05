@@ -57,7 +57,7 @@ if (scrollTopBtn) {
   });
 }
 
-// Image viewer: stop artwork images opening as separate files
+// Image viewer: open artwork images inside the website instead of raw image files
 document.addEventListener("DOMContentLoaded", () => {
   const viewer = document.createElement("div");
   viewer.className = "image-viewer";
@@ -72,6 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeButton = viewer.querySelector(".image-viewer-close");
 
   function openViewer(imageUrl, imageAlt) {
+    if (!imageUrl) return;
+
     viewerImage.src = imageUrl;
     viewerImage.alt = imageAlt || "Artwork preview";
     viewer.classList.add("active");
@@ -89,13 +91,27 @@ document.addEventListener("DOMContentLoaded", () => {
       'a[href$=".jpg"], a[href$=".jpeg"], a[href$=".png"], a[href$=".webp"]'
     );
 
-    if (!imageLink) return;
+    if (imageLink) {
+      event.preventDefault();
+
+      const linkedImage = imageLink.querySelector("img");
+      const imageUrl = imageLink.getAttribute("href");
+      const imageAlt = linkedImage?.getAttribute("alt") || "Artwork preview";
+
+      openViewer(imageUrl, imageAlt);
+      return;
+    }
+
+    const clickedImage = event.target.closest(
+  ".work-piece img, .artwork-main-image img, .artwork-gallery-item img, .art-card:not(.sanity-card) img"
+    );
+
+    if (!clickedImage) return;
 
     event.preventDefault();
 
-    const imageUrl = imageLink.getAttribute("href");
-    const imageAlt =
-      imageLink.querySelector("img")?.getAttribute("alt") || "Artwork preview";
+    const imageUrl = clickedImage.currentSrc || clickedImage.src;
+    const imageAlt = clickedImage.getAttribute("alt") || "Artwork preview";
 
     openViewer(imageUrl, imageAlt);
   });

@@ -1,6 +1,10 @@
 import { client } from "./sanity.js";
 
-const query = `*[_type == "artwork" && featured == true && hidden != true] | order(displayOrder asc){
+const query = `*[
+  _type == "artwork" &&
+  hidden != true &&
+  (category == "Illustration" || category == "illustration")
+] | order(displayOrder asc){
   title,
   category,
   year,
@@ -18,16 +22,17 @@ async function loadWorkArtwork() {
     if (!workGrid) return;
 
     if (!artworks || artworks.length === 0) {
-      console.warn("No Sanity artworks found. Keeping static work images.");
+      console.warn("No Sanity illustration artworks found. Keeping static work images.");
       workGrid.classList.add("show");
       return;
     }
 
     const sanityCards = artworks
+      .filter((art) => art.imageUrl)
       .map(
         (art) => `
-          <a href="artwork.html?slug=${art.slug}" class="gallery-card show">
-            <img src="${art.imageUrl}" alt="${art.title}" />
+          <a href="artwork.html?slug=${art.slug}" class="art-card sanity-card">
+            <img src="${art.imageUrl}" alt="${art.title || "Artwork"}" />
           </a>
         `
       )

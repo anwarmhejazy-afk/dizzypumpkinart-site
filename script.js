@@ -56,3 +56,61 @@ if (scrollTopBtn) {
     });
   });
 }
+
+// Image viewer: stop artwork images opening as separate files
+document.addEventListener("DOMContentLoaded", () => {
+  const viewer = document.createElement("div");
+  viewer.className = "image-viewer";
+  viewer.innerHTML = `
+    <button class="image-viewer-close" type="button" aria-label="Close image">×</button>
+    <img src="" alt="Artwork preview">
+  `;
+
+  document.body.appendChild(viewer);
+
+  const viewerImage = viewer.querySelector("img");
+  const closeButton = viewer.querySelector(".image-viewer-close");
+
+  function openViewer(imageUrl, imageAlt) {
+    viewerImage.src = imageUrl;
+    viewerImage.alt = imageAlt || "Artwork preview";
+    viewer.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeViewer() {
+    viewer.classList.remove("active");
+    viewerImage.src = "";
+    document.body.style.overflow = "";
+  }
+
+  document.addEventListener("click", (event) => {
+    const imageLink = event.target.closest(
+      'a[href$=".jpg"], a[href$=".jpeg"], a[href$=".png"], a[href$=".webp"]'
+    );
+
+    if (!imageLink) return;
+
+    event.preventDefault();
+
+    const imageUrl = imageLink.getAttribute("href");
+    const imageAlt =
+      imageLink.querySelector("img")?.getAttribute("alt") || "Artwork preview";
+
+    openViewer(imageUrl, imageAlt);
+  });
+
+  closeButton.addEventListener("click", closeViewer);
+
+  viewer.addEventListener("click", (event) => {
+    if (event.target === viewer) {
+      closeViewer();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && viewer.classList.contains("active")) {
+      closeViewer();
+    }
+  });
+});
